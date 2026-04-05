@@ -6,23 +6,42 @@
 <title>KVENTA SYSTEM</title>
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
 <div id="auth-screen">
 
-  <!-- ТВОЙ UI -->
+  <!-- ФОН UI -->
   <div id="ui"></div>
 
-  <!-- INPUT -->
-  <input id="login" placeholder="Никнейм">
-  <input id="password" type="password" placeholder="Пароль">
+  <!-- ПРАВАЯ ПАНЕЛЬ -->
+  <div id="right-panel">
 
-  <!-- КНОПКИ -->
-  <button id="login-btn">ВОЙТИ</button>
-  <button id="alt-btn">ГОСТЬ</button>
+    <input 
+      id="login" 
+      type="text" 
+      placeholder="Никнейм"
+      autocomplete="off"
+    >
+
+    <input 
+      id="password" 
+      type="password" 
+      placeholder="Пароль"
+      autocomplete="off"
+    >
+
+    <button id="alt-btn">
+      ГОСТЬ
+    </button>
+
+    <button id="login-btn">
+      ВОЙТИ
+    </button>
+
+  </div>
 
 </div>
 

@@ -11,18 +11,27 @@
 </head>
 <body>
 
-<div id="auth-screen">
+<div id="app">
 
-  <!-- ФОН UI -->
-  <div id="ui"></div>
+  <!-- ФОН -->
+  <div id="bg"></div>
 
-  <!-- INPUT -->
-  <input id="login" type="text" placeholder="Никнейм" autocomplete="off">
-  <input id="password" type="password" placeholder="Пароль" autocomplete="off">
+  <!-- ПАНЕЛЬ АВТОРИЗАЦИИ -->
+  <div id="auth-panel">
 
-  <!-- КНОПКИ -->
-  <button id="alt-btn">ГОСТЬ</button>
-  <button id="login-btn">ВОЙТИ</button>
+    <div class="logo"></div>
+
+    <input id="login" type="text" placeholder="Никнейм" autocomplete="off">
+    <input id="password" type="password" placeholder="Пароль" autocomplete="off">
+
+    <button id="login-btn">ВОЙТИ</button>
+    <button id="guest-btn">ГОСТЬ</button>
+
+    <div class="hint">
+      Если не удается войти — обратитесь к руководству организации
+    </div>
+
+  </div>
 
 </div>
 

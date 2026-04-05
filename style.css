@@ -7,57 +7,61 @@ body, html {
   background:#0f141a;
 }
 
-/* ОСНОВА */
+/* ЦЕНТР ИГРОВОГО ЭКРАНА */
 #auth-screen {
   position:relative;
-  width:100%;
-  height:100%;
+  width:1920px;
+  height:1080px;
+  margin:auto;
+  transform:scale(calc(100vw / 1920));
+  transform-origin: top left;
 }
 
 /* ФОН UI */
 #ui {
   position:absolute;
-  width:100%;
-  height:100%;
-  background:url('assets/ui/full_ui.png') center/cover no-repeat;
+  width:1920px;
+  height:1080px;
+  background:url('assets/ui/full_ui.png') no-repeat center;
+  background-size:100% 100%;
 }
 
 /* INPUT */
 #login, #password {
   position:absolute;
-  width:340px;
-  height:60px;
+  width:300px;
+  height:55px;
   border:none;
   outline:none;
-  background:rgba(0,0,0,0.4);
+  background:rgba(0,0,0,0.5);
   color:#fff;
   padding-left:15px;
   font-size:18px;
   border-radius:8px;
 }
 
-/* ТОЧНЫЕ ПОЗИЦИИ */
+/* ТОЧНЫЕ КООРДИНАТЫ (ПОД ТВОЙ UI) */
 #login {
-  top:300px;
-  right:180px;
+  top:360px;
+  left:1400px;
 }
 
 #password {
-  top:380px;
-  right:180px;
+  top:440px;
+  left:1400px;
 }
 
 /* КНОПКА ВОЙТИ */
 #login-btn {
   position:absolute;
-  width:380px;
-  height:70px;
-  bottom:120px;
-  right:160px;
+  width:400px;
+  height:80px;
+  top:780px;
+  left:1350px;
   border:none;
   background:rgba(255,255,255,0.15);
   color:#fff;
-  font-size:18px;
+  font-size:20px;
   cursor:pointer;
   border-radius:10px;
 }
@@ -65,10 +69,10 @@ body, html {
 /* ГОСТЬ */
 #alt-btn {
   position:absolute;
-  width:240px;
+  width:220px;
   height:50px;
-  bottom:200px;
-  right:210px;
+  top:700px;
+  left:1450px;
   border:none;
   background:rgba(255,255,255,0.08);
   color:#fff;
@@ -77,15 +81,16 @@ body, html {
   border-radius:8px;
 }
 
-/* ПЛЕЙСХОЛДЕР */
-input::placeholder {
-  color:rgba(255,255,255,0.6);
-}
-
+/* ХОВЕР */
 #login-btn:hover {
-  background:rgba(255,255,255,0.25);
+  background:rgba(255,255,255,0.3);
 }
 
 #alt-btn:hover {
   background:rgba(255,255,255,0.15);
+}
+
+/* PLACEHOLDER */
+input::placeholder {
+  color:rgba(255,255,255,0.6);
 }

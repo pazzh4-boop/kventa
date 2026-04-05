@@ -1,23 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KVENTA SYSTEM</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
 <div id="auth-screen">
 
-  <div id="bg"></div>
-  <div id="overlay"></div>
+  <!-- ТВОЙ UI -->
+  <div id="ui"></div>
 
-  <!-- Центральная панель -->
-  <div id="panel">
+  <!-- INPUT -->
+  <input id="login" placeholder="Никнейм">
+  <input id="password" type="password" placeholder="Пароль">
 
-    <div id="logo"></div>
-
-    <input id="login" placeholder="Никнейм">
-    <input id="password" type="password" placeholder="Пароль">
-
-    <button id="login-btn">ВОЙТИ</button>
-    <button id="alt-btn">ГОСТЕВОЙ ДОСТУП</button>
-
-    <div id="hint">
-      Если не удается войти в КПК — обратитесь к главному вашей организации
-    </div>
-
-  </div>
+  <!-- КНОПКИ -->
+  <button id="login-btn">ВОЙТИ</button>
+  <button id="alt-btn">ГОСТЬ</button>
 
 </div>
+
+<script src="script.js"></script>
+</body>
+</html>

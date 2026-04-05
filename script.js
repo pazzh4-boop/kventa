@@ -1,4 +1,5 @@
 const loginBtn = document.getElementById('login-btn');
+const altBtn = document.getElementById('alt-btn');
 
 loginBtn.addEventListener('click', () => {
   const login = document.getElementById('login').value;
@@ -9,4 +10,8 @@ loginBtn.addEventListener('click', () => {
   } else {
     alert("ОТКАЗ В ДОСТУПЕ");
   }
+});
+
+altBtn.addEventListener('click', () => {
+  alert("ГОСТЕВОЙ ДОСТУП");
 });

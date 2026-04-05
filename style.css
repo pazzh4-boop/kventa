@@ -7,78 +7,62 @@ body, html {
   background:#0f141a;
 }
 
-/* ЦЕНТР ИГРОВОГО ЭКРАНА */
-#auth-screen {
-  position:relative;
-  width:1920px;
-  height:1080px;
-  margin:auto;
-  transform:scale(calc(100vw / 1920));
-  transform-origin: top left;
-}
-
-/* ФОН UI */
+/* ФОН */
 #ui {
   position:absolute;
-  width:1920px;
-  height:1080px;
-  background:url('assets/ui/full_ui.png') no-repeat center;
-  background-size:100% 100%;
+  width:100%;
+  height:100%;
+  background:url('assets/ui/full_ui.png') center/cover no-repeat;
+}
+
+/* КОНТЕЙНЕР СПРАВА */
+#right-panel {
+  position:absolute;
+  top:0;
+  right:0;
+  width:520px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
 }
 
 /* INPUT */
 #login, #password {
-  position:absolute;
-  width:300px;
+  width:320px;
   height:55px;
   border:none;
   outline:none;
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.55);
   color:#fff;
   padding-left:15px;
   font-size:18px;
   border-radius:8px;
 }
 
-/* ТОЧНЫЕ КООРДИНАТЫ (ПОД ТВОЙ UI) */
-#login {
-  top:360px;
-  left:1400px;
-}
-
-#password {
-  top:440px;
-  left:1400px;
-}
-
-/* КНОПКА ВОЙТИ */
+/* КНОПКИ */
 #login-btn {
-  position:absolute;
-  width:400px;
-  height:80px;
-  top:780px;
-  left:1350px;
-  border:none;
+  width:360px;
+  height:70px;
   background:rgba(255,255,255,0.15);
+  border:none;
   color:#fff;
   font-size:20px;
-  cursor:pointer;
   border-radius:10px;
+  cursor:pointer;
 }
 
-/* ГОСТЬ */
 #alt-btn {
-  position:absolute;
   width:220px;
-  height:50px;
-  top:700px;
-  left:1450px;
-  border:none;
+  height:45px;
   background:rgba(255,255,255,0.08);
+  border:none;
   color:#fff;
   font-size:14px;
-  cursor:pointer;
   border-radius:8px;
+  cursor:pointer;
 }
 
 /* ХОВЕР */

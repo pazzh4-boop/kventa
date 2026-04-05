@@ -1,5 +1,5 @@
 const loginBtn = document.getElementById('login-btn');
-const altBtn = document.getElementById('alt-btn');
+const guestBtn = document.getElementById('guest-btn');
 
 loginBtn.addEventListener('click', () => {
   const login = document.getElementById('login').value;
@@ -12,6 +12,6 @@ loginBtn.addEventListener('click', () => {
   }
 });
 
-altBtn.addEventListener('click', () => {
+guestBtn.addEventListener('click', () => {
   alert("ГОСТЕВОЙ ДОСТУП");
 });

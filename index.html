@@ -2,38 +2,66 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KVENTA SYSTEM</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
 
-<div id="app">
+<div id="bg"></div>
 
-  <!-- ФОН -->
-  <div id="bg"></div>
+<!-- AUTH -->
+<div id="auth">
 
-  <!-- ПАНЕЛЬ АВТОРИЗАЦИИ -->
-  <div id="auth-panel">
+  <div class="panel">
 
-    <div class="logo"></div>
+    <h1>АВТОРИЗАЦИЯ</h1>
 
-    <input id="login" type="text" placeholder="Никнейм" autocomplete="off">
-    <input id="password" type="password" placeholder="Пароль" autocomplete="off">
+    <input id="login" placeholder="Никнейм">
+    <input id="password" type="password" placeholder="Пароль">
 
     <button id="login-btn">ВОЙТИ</button>
     <button id="guest-btn">ГОСТЬ</button>
 
-    <div class="hint">
-      Если не удается войти — обратитесь к руководству организации
-    </div>
+    <div id="status"></div>
 
   </div>
 
 </div>
+
+<!-- MAIN -->
+<div id="main">
+
+  <div id="sidebar">
+    <button data-tab="profile" class="active">Профиль</button>
+    <button data-tab="files">Файлы</button>
+    <button data-tab="logs">Логи</button>
+    <button data-tab="missions">Задания</button>
+    <button data-tab="scanner">Сканер</button>
+    <button data-tab="terminal">Терминал</button>
+  </div>
+
+  <div id="content">
+
+    <div class="tab active" id="profile">
+      <h2>ДОСЬЕ</h2>
+      <p>Jay Forsyth</p>
+      <p>Разведка / FIB</p>
+    </div>
+
+    <div class="tab" id="files"></div>
+    <div class="tab" id="logs"></div>
+    <div class="tab" id="missions"></div>
+    <div class="tab" id="scanner"></div>
+    <div class="tab" id="terminal"></div>
+
+  </div>
+
+</div>
+
+<div id="notifications"></div>
 
 <script src="script.js"></script>
 </body>

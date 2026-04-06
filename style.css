@@ -1,103 +1,152 @@
-body, html {
+body {
   margin:0;
-  padding:0;
-  height:100%;
   font-family:'Orbitron', sans-serif;
-  background:#0f141a;
+  color:white;
   overflow:hidden;
 }
 
 /* ФОН */
 #bg {
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url('assets/bg.jpg') left center / cover no-repeat;
+}
+
+/* AUTH */
+#auth {
   position:absolute;
   width:100%;
   height:100%;
-  background:url('assets/ui/full_ui.png') center/cover no-repeat;
-  filter:brightness(0.6);
 }
 
-/* ПАНЕЛЬ */
-#auth-panel {
+/* СТЕКЛО */
+.panel {
   position:absolute;
   right:8%;
   top:50%;
   transform:translateY(-50%);
+
   width:360px;
   padding:30px;
 
-  background:rgba(20,25,35,0.65);
+  background:rgba(15,20,30,0.55);
   backdrop-filter:blur(20px);
 
-  border-radius:14px;
+  border-radius:16px;
+
+  box-shadow:0 0 60px rgba(0,0,0,0.7);
 
   display:flex;
   flex-direction:column;
   gap:15px;
-
-  box-shadow:0 0 40px rgba(0,0,0,0.5);
 }
 
-/* ЛОГО */
-.logo {
-  height:100px;
-  background:url('assets/ui/logo.png') center/contain no-repeat;
-  opacity:0.7;
+/* TITLE */
+.panel h1 {
+  text-align:center;
+  font-size:20px;
+  letter-spacing:2px;
 }
 
 /* INPUT */
-#auth-panel input {
+.panel input {
   height:50px;
   background:rgba(0,0,0,0.6);
   border:none;
-  outline:none;
-  color:#fff;
-  padding-left:15px;
-  border-radius:8px;
-  font-size:15px;
-}
-
-/* КНОПКА ВОЙТИ */
-#login-btn {
-  height:60px;
-  background:linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
-  border:none;
-  color:#fff;
-  font-size:18px;
   border-radius:10px;
-  cursor:pointer;
-  transition:0.2s;
+  color:white;
+  padding-left:15px;
 }
 
-/* ГОСТЬ */
+/* BUTTON */
+#login-btn {
+  height:55px;
+  border:none;
+  border-radius:12px;
+  color:white;
+
+  background:linear-gradient(
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.1)
+  );
+}
+
 #guest-btn {
   height:45px;
-  background:rgba(255,255,255,0.08);
   border:none;
-  color:#fff;
-  font-size:14px;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.2s;
+  border-radius:10px;
+  background:rgba(255,255,255,0.08);
+  color:white;
 }
 
-/* ХОВЕРЫ */
-#login-btn:hover {
-  background:rgba(255,255,255,0.35);
-}
-
-#guest-btn:hover {
-  background:rgba(255,255,255,0.2);
-}
-
-/* ПОДСКАЗКА */
-.hint {
+/* STATUS */
+#status {
   font-size:12px;
-  color:rgba(255,255,255,0.5);
   text-align:center;
-  margin-top:10px;
 }
 
-/* PLACEHOLDER */
-input::placeholder {
-  color:rgba(255,255,255,0.6);
+/* MAIN */
+#main {
+  display:none;
+  width:100%;
+  height:100%;
+}
+
+/* SIDEBAR */
+#sidebar {
+  position:absolute;
+  left:0;
+  top:0;
+  width:220px;
+  height:100%;
+
+  background:rgba(15,20,30,0.4);
+  backdrop-filter:blur(20px);
+
+  padding:20px;
+}
+
+#sidebar button {
+  display:block;
+  width:100%;
+  background:none;
+  border:none;
+  color:white;
+  padding:10px;
+  text-align:left;
+  cursor:pointer;
+}
+
+#sidebar button.active {
+  color:#4da6ff;
+}
+
+/* CONTENT */
+#content {
+  position:absolute;
+  left:220px;
+  right:0;
+  top:0;
+  bottom:0;
+
+  padding:40px;
+
+  background:rgba(15,20,30,0.2);
+  backdrop-filter:blur(10px);
+}
+
+.tab {
+  display:none;
+}
+
+.tab.active {
+  display:block;
+}
+
+/* NOTIFICATIONS */
+#notifications {
+  position:absolute;
+  top:20px;
+  right:20px;
 }

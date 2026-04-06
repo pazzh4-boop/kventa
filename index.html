@@ -14,7 +14,6 @@
 
 <!-- AUTH -->
 <div id="auth">
-
   <div class="panel">
 
     <h1>АВТОРИЗАЦИЯ</h1>
@@ -25,20 +24,17 @@
     <button id="login-btn">ВОЙТИ</button>
     <button id="guest-btn">ГОСТЬ</button>
 
-    <div id="status"></div>
-
   </div>
-
 </div>
 
-<!-- MAIN -->
+<!-- MAIN SYSTEM -->
 <div id="main">
 
   <div id="sidebar">
     <button data-tab="profile" class="active">Профиль</button>
-    <button data-tab="files">Файлы</button>
-    <button data-tab="logs">Логи</button>
+    <button data-tab="agents">Агенты</button>
     <button data-tab="missions">Задания</button>
+    <button data-tab="logs">Логи</button>
     <button data-tab="scanner">Сканер</button>
     <button data-tab="terminal">Терминал</button>
   </div>
@@ -47,15 +43,40 @@
 
     <div class="tab active" id="profile">
       <h2>ДОСЬЕ</h2>
-      <p>Jay Forsyth</p>
-      <p>Разведка / FIB</p>
+      <p>Имя: Jay Forsyth</p>
+      <p>Организация: FIB</p>
+      <p>Ранг: Агент</p>
     </div>
 
-    <div class="tab" id="files"></div>
-    <div class="tab" id="logs"></div>
-    <div class="tab" id="missions"></div>
-    <div class="tab" id="scanner"></div>
-    <div class="tab" id="terminal"></div>
+    <div class="tab" id="agents">
+      <h2>АГЕНТЫ</h2>
+      <div class="card">Agent #1 — Активен</div>
+      <div class="card">Agent #2 — В миссии</div>
+    </div>
+
+    <div class="tab" id="missions">
+      <h2>ЗАДАНИЯ</h2>
+      <div class="card">Операция "Тень" — Активна</div>
+      <div class="card">Наблюдение — Завершено</div>
+    </div>
+
+    <div class="tab" id="logs">
+      <h2>ЛОГИ</h2>
+      <p>> Вход в систему</p>
+      <p>> Доступ разрешен</p>
+    </div>
+
+    <div class="tab" id="scanner">
+      <h2>СКАНЕР</h2>
+      <input placeholder="Введите имя">
+      <button>Сканировать</button>
+    </div>
+
+    <div class="tab" id="terminal">
+      <h2>ТЕРМИНАЛ</h2>
+      <div id="terminal-box"></div>
+      <input id="terminal-input" placeholder="Введите команду">
+    </div>
 
   </div>
 

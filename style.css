@@ -5,22 +5,38 @@ body {
   overflow:hidden;
 }
 
-/* ФОН */
+/* BG */
 #bg {
   position:fixed;
   width:100%;
   height:100%;
-  background:url('assets/bg.jpg') left center / cover no-repeat;
+  background:url('assets/bg.jpg') center/cover no-repeat;
 }
 
-/* AUTH */
-#auth {
+#bg::after {
+  content:"";
   position:absolute;
   width:100%;
   height:100%;
+  background:rgba(0,0,0,0.5);
 }
 
-/* PANEL */
+/* HUD */
+#hud {
+  position:absolute;
+  top:0;
+  width:100%;
+  height:40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 20px;
+  background:rgba(15,20,30,0.4);
+  backdrop-filter:blur(10px);
+  font-size:12px;
+}
+
+/* AUTH */
 .panel {
   position:absolute;
   right:8%;
@@ -28,24 +44,16 @@ body {
   transform:translateY(-50%);
   width:360px;
   padding:30px;
-
   background:rgba(15,20,30,0.55);
   backdrop-filter:blur(20px);
-
   border-radius:16px;
-  box-shadow:0 0 60px rgba(0,0,0,0.7);
-
   display:flex;
   flex-direction:column;
   gap:15px;
 }
 
-.panel h1 {
-  text-align:center;
-}
-
 /* INPUT */
-.panel input {
+input {
   height:50px;
   background:rgba(0,0,0,0.6);
   border:none;
@@ -56,55 +64,28 @@ body {
 
 /* BUTTON */
 button {
-  cursor:pointer;
-}
-
-#login-btn {
-  height:55px;
-  border:none;
-  border-radius:12px;
-  background:linear-gradient(
-    rgba(255,255,255,0.25),
-    rgba(255,255,255,0.1)
-  );
-  color:white;
-}
-
-#guest-btn {
-  height:45px;
   border:none;
   border-radius:10px;
-  background:rgba(255,255,255,0.08);
   color:white;
+  padding:10px;
+  cursor:pointer;
+  background:rgba(255,255,255,0.1);
 }
 
 /* MAIN */
 #main {
   display:none;
-  width:100%;
-  height:100%;
 }
 
 /* SIDEBAR */
 #sidebar {
   position:absolute;
   left:0;
-  top:0;
   width:220px;
   height:100%;
   background:rgba(15,20,30,0.4);
   backdrop-filter:blur(20px);
   padding:20px;
-}
-
-#sidebar button {
-  display:block;
-  width:100%;
-  background:none;
-  border:none;
-  color:white;
-  padding:10px;
-  text-align:left;
 }
 
 #sidebar button.active {
@@ -116,12 +97,7 @@ button {
   position:absolute;
   left:220px;
   right:0;
-  top:0;
-  bottom:0;
   padding:40px;
-
-  background:rgba(15,20,30,0.2);
-  backdrop-filter:blur(10px);
 }
 
 /* TABS */
@@ -133,12 +109,61 @@ button {
   display:block;
 }
 
-/* CARDS */
-.card {
+/* AGENTS */
+.agent-card {
+  display:flex;
+  gap:10px;
   padding:15px;
   margin-bottom:10px;
   background:rgba(255,255,255,0.05);
   border-radius:10px;
+}
+
+.agent-card.active {
+  background:rgba(77,166,255,0.3);
+}
+
+.agent-avatar {
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+/* DETAILS */
+#agent-details {
+  position:absolute;
+  right:40px;
+  top:40px;
+  width:300px;
+  background:rgba(15,20,30,0.6);
+  padding:20px;
+  border-radius:12px;
+}
+
+/* MISSIONS */
+.mission-card {
+  padding:15px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,0.05);
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* WINDOWS */
+.window {
+  position:absolute;
+  top:120px;
+  left:300px;
+  width:350px;
+  background:rgba(15,20,30,0.95);
+  padding:15px;
+  border-radius:12px;
+}
+
+.window-header {
+  display:flex;
+  justify-content:space-between;
+  cursor:grab;
 }
 
 /* TERMINAL */
@@ -148,11 +173,4 @@ button {
   margin-bottom:10px;
   padding:10px;
   overflow:auto;
-}
-
-/* NOTIFY */
-#notifications {
-  position:absolute;
-  top:20px;
-  right:20px;
 }

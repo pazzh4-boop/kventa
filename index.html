@@ -12,10 +12,18 @@
 
 <div id="bg"></div>
 
+<!-- HUD -->
+<div id="hud">
+  <div class="hud-left">KVENTA SYSTEM</div>
+  <div class="hud-right">
+    <span id="user-role">FIB</span>
+    <span id="system-status">● ONLINE</span>
+  </div>
+</div>
+
 <!-- AUTH -->
 <div id="auth">
   <div class="panel">
-
     <h1>АВТОРИЗАЦИЯ</h1>
 
     <input id="login" placeholder="Никнейм">
@@ -23,11 +31,10 @@
 
     <button id="login-btn">ВОЙТИ</button>
     <button id="guest-btn">ГОСТЬ</button>
-
   </div>
 </div>
 
-<!-- MAIN SYSTEM -->
+<!-- MAIN -->
 <div id="main">
 
   <div id="sidebar">
@@ -41,6 +48,7 @@
 
   <div id="content">
 
+    <!-- PROFILE -->
     <div class="tab active" id="profile">
       <h2>ДОСЬЕ</h2>
       <p>Имя: Jay Forsyth</p>
@@ -48,30 +56,75 @@
       <p>Ранг: Агент</p>
     </div>
 
+    <!-- AGENTS -->
     <div class="tab" id="agents">
-      <h2>АГЕНТЫ</h2>
-      <div class="card">Agent #1 — Активен</div>
-      <div class="card">Agent #2 — В миссии</div>
+
+      <div class="agent-list">
+
+        <div class="agent-card"
+        onclick="selectAgent(event,'Agent #1','Активен','Разведка',12,'assets/agent1.jpg')">
+
+          <img src="assets/agent1.jpg" class="agent-avatar">
+          <div>
+            <b>Agent #1</b><br>
+            <span class="level-badge">LVL 12</span><br>
+            Статус: Активен
+          </div>
+        </div>
+
+        <div class="agent-card"
+        onclick="selectAgent(event,'Agent #2','В миссии','Поддержка',7,'assets/agent2.jpg')">
+
+          <img src="assets/agent2.jpg" class="agent-avatar">
+          <div>
+            <b>Agent #2</b><br>
+            <span class="level-badge">LVL 7</span><br>
+            Статус: В миссии
+          </div>
+        </div>
+
+      </div>
+
+      <div id="agent-details"></div>
+
     </div>
 
+    <!-- MISSIONS -->
     <div class="tab" id="missions">
+
       <h2>ЗАДАНИЯ</h2>
-      <div class="card">Операция "Тень" — Активна</div>
-      <div class="card">Наблюдение — Завершено</div>
+
+      <div class="mission-card"
+      onclick="openMission('Операция Тень','Проникновение','Активна')">
+
+        <div class="mission-title">Операция "Тень"</div>
+        <div class="mission-status status-active">Активна</div>
+
+      </div>
+
+      <div class="mission-card">
+
+        <div class="mission-title">Наблюдение</div>
+        <div class="mission-status status-done">Завершено</div>
+
+      </div>
+
     </div>
 
+    <!-- LOGS -->
     <div class="tab" id="logs">
       <h2>ЛОГИ</h2>
       <p>> Вход в систему</p>
-      <p>> Доступ разрешен</p>
     </div>
 
+    <!-- SCANNER -->
     <div class="tab" id="scanner">
       <h2>СКАНЕР</h2>
-      <input placeholder="Введите имя">
-      <button>Сканировать</button>
+      <button onclick="scanPerson()">СКАНИРОВАТЬ</button>
+      <div id="scan-result"></div>
     </div>
 
+    <!-- TERMINAL -->
     <div class="tab" id="terminal">
       <h2>ТЕРМИНАЛ</h2>
       <div id="terminal-box"></div>
@@ -82,6 +135,7 @@
 
 </div>
 
+<div id="windows"></div>
 <div id="notifications"></div>
 
 <script src="script.js"></script>

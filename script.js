@@ -11,8 +11,31 @@ tabs.forEach(btn=>{
   }
 });
 
-/* LOGIN */
+/* LOGIN ANIMATION */
 document.getElementById('login-btn').onclick = ()=>{
-  document.getElementById('auth').style.display = "none";
-  document.getElementById('main').style.display = "block";
+
+  const btn = document.getElementById('login-btn');
+
+  btn.innerText = "ПРОВЕРКА...";
+  btn.disabled = true;
+
+  document.body.classList.add("auth-loading");
+
+  setTimeout(()=>{
+
+    btn.innerText = "ДОСТУП РАЗРЕШЕН";
+
+    setTimeout(()=>{
+
+      document.getElementById('auth').classList.add("fade-out");
+
+      setTimeout(()=>{
+        document.getElementById('auth').style.display = "none";
+        document.getElementById('main').style.display = "block";
+      },400);
+
+    },800);
+
+  },1200);
+
 };

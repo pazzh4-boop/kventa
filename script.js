@@ -1,40 +1,89 @@
-const tabs = document.querySelectorAll('#sidebar button');
+/* LOGIN */
+document.getElementById('login-btn').onclick = ()=>{
+  document.getElementById('auth').style.display="none";
+  document.getElementById('main').style.display="block";
+  notify("Доступ разрешен");
+};
 
-tabs.forEach(btn=>{
+/* TABS */
+document.querySelectorAll('#sidebar button').forEach(btn=>{
   btn.onclick = ()=>{
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    tabs.forEach(b=>b.classList.remove('active'));
-
     btn.classList.add('active');
     document.getElementById(btn.dataset.tab).classList.add('active');
   }
 });
 
-/* LOGIN */
-document.getElementById('login-btn').onclick = ()=>{
+/* NOTIFY */
+function notify(text){
+  const el = document.createElement('div');
+  el.className="notif";
+  el.innerText=text;
+  document.getElementById('notifications').appendChild(el);
+  setTimeout(()=>el.remove(),3000);
+}
 
-  const btn = document.getElementById('login-btn');
+/* STATE */
+function setSystemState(state){
+  document.body.setAttribute("data-state",state);
+}
 
-  btn.innerText = "ПРОВЕРКА...";
-  btn.disabled = true;
+/* WINDOWS */
+let zIndex=1000;
 
-  document.body.classList.add("auth-loading");
+function createWindow(title, content){
+  const win=document.createElement('div');
+  win.className="window";
+  win.style.top="150px";
+  win.style.left="300px";
 
-  setTimeout(()=>{
+  win.innerHTML=`
+    <div class="window-header">
+      ${title}
+      <span onclick="this.closest('.window').remove()">✕</span>
+    </div>
+    <div>${content}</div>
+  `;
 
-    btn.innerText = "ДОСТУП РАЗРЕШЕН";
+  document.getElementById('windows').appendChild(win);
+}
 
-    setTimeout(()=>{
+/* AGENTS PRO */
+const agents=[
+  {name:"Agent #1",efficiency:80,risk:20},
+  {name:"Agent #2",efficiency:60,risk:40}
+];
 
-      document.getElementById('auth').classList.add("fade-out");
+function renderAgents(){
+  const list=document.querySelector('.list');
+  list.innerHTML="";
+  agents.forEach(a=>{
+    const el=document.createElement('div');
+    el.className="agent";
+    el.innerHTML=`${a.name}`;
+    el.onclick=()=>createWindow(a.name,"Risk:"+a.risk);
+    list.appendChild(el);
+  });
+}
 
-      setTimeout(()=>{
-        document.getElementById('auth').style.display = "none";
-        document.getElementById('main').style.display = "block";
-      },400);
+/* MISSIONS PRO */
+const missions=[
+  {title:"Операция Тень",progress:20},
+  {title:"Перехват",progress:10}
+];
 
-    },800);
+function renderMissions(){
+  const c=document.getElementById('missions');
+  c.innerHTML="<h2>ЗАДАНИЯ</h2>";
+  missions.forEach(m=>{
+    const el=document.createElement('div');
+    el.className="mission-card";
+    el.innerHTML=`${m.title}`;
+    el.onclick=()=>createWindow(m.title,"Progress:"+m.progress);
+    c.appendChild(el);
+  });
+}
 
-  },1200);
-
-};
+/* INIT */
+renderAgents();
+renderMissions();

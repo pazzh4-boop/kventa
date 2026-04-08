@@ -1,89 +1,139 @@
-/* LOGIN */
-document.getElementById('login-btn').onclick = ()=>{
-  document.getElementById('auth').style.display="none";
-  document.getElementById('main').style.display="block";
-  notify("Доступ разрешен");
-};
-
-/* TABS */
-document.querySelectorAll('#sidebar button').forEach(btn=>{
-  btn.onclick = ()=>{
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.tab).classList.add('active');
-  }
-});
-
-/* NOTIFY */
-function notify(text){
-  const el = document.createElement('div');
-  el.className="notif";
-  el.innerText=text;
-  document.getElementById('notifications').appendChild(el);
-  setTimeout(()=>el.remove(),3000);
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-/* STATE */
-function setSystemState(state){
-  document.body.setAttribute("data-state",state);
+body {
+  font-family:'Orbitron', sans-serif;
+  color:white;
+  overflow:hidden;
 }
 
-/* WINDOWS */
-let zIndex=1000;
-
-function createWindow(title, content){
-  const win=document.createElement('div');
-  win.className="window";
-  win.style.top="150px";
-  win.style.left="300px";
-
-  win.innerHTML=`
-    <div class="window-header">
-      ${title}
-      <span onclick="this.closest('.window').remove()">✕</span>
-    </div>
-    <div>${content}</div>
-  `;
-
-  document.getElementById('windows').appendChild(win);
+/* BG */
+#bg {
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url('assets/bg.jpg') center/cover no-repeat;
 }
 
-/* AGENTS PRO */
-const agents=[
-  {name:"Agent #1",efficiency:80,risk:20},
-  {name:"Agent #2",efficiency:60,risk:40}
-];
-
-function renderAgents(){
-  const list=document.querySelector('.list');
-  list.innerHTML="";
-  agents.forEach(a=>{
-    const el=document.createElement('div');
-    el.className="agent";
-    el.innerHTML=`${a.name}`;
-    el.onclick=()=>createWindow(a.name,"Risk:"+a.risk);
-    list.appendChild(el);
-  });
+#bg::after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.75);
 }
 
-/* MISSIONS PRO */
-const missions=[
-  {title:"Операция Тень",progress:20},
-  {title:"Перехват",progress:10}
-];
-
-function renderMissions(){
-  const c=document.getElementById('missions');
-  c.innerHTML="<h2>ЗАДАНИЯ</h2>";
-  missions.forEach(m=>{
-    const el=document.createElement('div');
-    el.className="mission-card";
-    el.innerHTML=`${m.title}`;
-    el.onclick=()=>createWindow(m.title,"Progress:"+m.progress);
-    c.appendChild(el);
-  });
+/* HUD */
+#hud {
+  position:absolute;
+  top:0;
+  width:100%;
+  height:50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 30px;
+  background:rgba(10,15,25,0.6);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-/* INIT */
-renderAgents();
-renderMissions();
+/* AUTH */
+#auth {
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  padding-right:8%;
+}
+
+.auth-panel {
+  width:320px;
+  padding:25px;
+
+  background:rgba(15,20,30,0.5);
+  backdrop-filter:blur(20px);
+
+  border-radius:14px;
+
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.auth-panel input {
+  padding:10px;
+  background:rgba(0,0,0,0.6);
+  border:none;
+  border-radius:6px;
+  color:white;
+}
+
+.auth-panel button {
+  padding:10px;
+  background:linear-gradient(90deg,#4da6ff,#6ec1ff);
+  border:none;
+  border-radius:6px;
+  color:white;
+  cursor:pointer;
+}
+
+/* SIDEBAR */
+#sidebar {
+  position:absolute;
+  top:70px;
+  left:20px;
+  width:180px;
+
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+#sidebar button {
+  padding:10px;
+  text-align:left;
+
+  background:rgba(255,255,255,0.05);
+  border:none;
+  border-radius:8px;
+
+  color:white;
+}
+
+#sidebar button.active {
+  background:rgba(77,166,255,0.25);
+}
+
+/* CONTENT */
+#content {
+  position:absolute;
+  left:220px;
+  top:80px;
+  right:40px;
+  bottom:40px;
+}
+
+.tab {
+  display:none;
+}
+
+.tab.active {
+  display:block;
+}
+
+/* CARD */
+.card {
+  width:100%;
+  max-width:700px;
+
+  background:rgba(15,20,30,0.5);
+  backdrop-filter:blur(20px);
+
+  padding:25px;
+  border-radius:16px;
+}

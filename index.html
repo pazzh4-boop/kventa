@@ -14,11 +14,8 @@
 
 <!-- HUD -->
 <div id="hud">
-  <div class="hud-left">KVENTA SYSTEM</div>
-  <div class="hud-right">
-    <span id="user-role">FIB</span>
-    <span id="system-status">● ONLINE</span>
-  </div>
+  <div>KVENTA SYSTEM</div>
+  <div>Agent: je1nn | ● ONLINE</div>
 </div>
 
 <!-- AUTH -->
@@ -30,13 +27,13 @@
     <input id="password" type="password" placeholder="Пароль">
 
     <button id="login-btn">ВОЙТИ</button>
-    <button id="guest-btn">ГОСТЬ</button>
   </div>
 </div>
 
 <!-- MAIN -->
 <div id="main">
 
+  <!-- SIDEBAR -->
   <div id="sidebar">
     <button data-tab="profile" class="active">Профиль</button>
     <button data-tab="agents">Агенты</button>
@@ -46,97 +43,101 @@
     <button data-tab="terminal">Терминал</button>
   </div>
 
+  <!-- CONTENT -->
   <div id="content">
 
     <!-- PROFILE -->
     <div class="tab active" id="profile">
-      <h2>ДОСЬЕ</h2>
-      <p>Имя: Jay Forsyth</p>
-      <p>Организация: FIB</p>
-      <p>Ранг: Агент</p>
+      <div class="card big">
+        <h2>ДОСЬЕ</h2>
+
+        <div class="grid">
+          <div><span>Имя</span><b>Jay Forsyth</b></div>
+          <div><span>Организация</span><b>FIB</b></div>
+          <div><span>Ранг</span><b>Агент</b></div>
+        </div>
+      </div>
     </div>
 
     <!-- AGENTS -->
     <div class="tab" id="agents">
 
-      <div class="agent-list">
+      <div class="split">
 
-        <div class="agent-card"
-        onclick="selectAgent(event,'Agent #1','Активен','Разведка',12,'assets/agent1.jpg')">
+        <div class="list">
 
-          <img src="assets/agent1.jpg" class="agent-avatar">
-          <div>
-            <b>Agent #1</b><br>
-            <span class="level-badge">LVL 12</span><br>
-            Статус: Активен
+          <div class="agent active">
+            <div class="avatar"></div>
+            <div>
+              <b>Agent #1</b>
+              <span>Активен</span>
+            </div>
           </div>
+
+          <div class="agent">
+            <div class="avatar"></div>
+            <div>
+              <b>Agent #2</b>
+              <span>В миссии</span>
+            </div>
+          </div>
+
         </div>
 
-        <div class="agent-card"
-        onclick="selectAgent(event,'Agent #2','В миссии','Поддержка',7,'assets/agent2.jpg')">
-
-          <img src="assets/agent2.jpg" class="agent-avatar">
-          <div>
-            <b>Agent #2</b><br>
-            <span class="level-badge">LVL 7</span><br>
-            Статус: В миссии
-          </div>
+        <div class="details card">
+          <h3>Agent #1</h3>
+          <p>Статус: Активен</p>
+          <p>Роль: Разведка</p>
         </div>
 
       </div>
-
-      <div id="agent-details"></div>
 
     </div>
 
     <!-- MISSIONS -->
     <div class="tab" id="missions">
 
-      <h2>ЗАДАНИЯ</h2>
+      <div class="card">
+        <h2>Операция "Тень"</h2>
 
-      <div class="mission-card"
-      onclick="openMission('Операция Тень','Проникновение','Активна')">
+        <div class="progress">
+          <div class="bar"></div>
+        </div>
 
-        <div class="mission-title">Операция "Тень"</div>
-        <div class="mission-status status-active">Активна</div>
-
-      </div>
-
-      <div class="mission-card">
-
-        <div class="mission-title">Наблюдение</div>
-        <div class="mission-status status-done">Завершено</div>
-
+        <span>В процессе</span>
       </div>
 
     </div>
 
     <!-- LOGS -->
     <div class="tab" id="logs">
-      <h2>ЛОГИ</h2>
-      <p>> Вход в систему</p>
+      <div class="card">
+        <h2>ЛОГИ</h2>
+        <div class="logs">
+          <div>> система активна</div>
+        </div>
+      </div>
     </div>
 
     <!-- SCANNER -->
     <div class="tab" id="scanner">
-      <h2>СКАНЕР</h2>
-      <button onclick="scanPerson()">СКАНИРОВАТЬ</button>
-      <div id="scan-result"></div>
+      <div class="card">
+        <h2>БАЗА</h2>
+        <input placeholder="Поиск">
+      </div>
     </div>
 
     <!-- TERMINAL -->
     <div class="tab" id="terminal">
-      <h2>ТЕРМИНАЛ</h2>
-      <div id="terminal-box"></div>
-      <input id="terminal-input" placeholder="Введите команду">
+      <div class="card">
+        <h2>ТЕРМИНАЛ</h2>
+        <div class="logs"></div>
+      </div>
     </div>
 
   </div>
 
 </div>
-
-<div id="windows"></div>
-<div id="notifications"></div>
 
 <script src="script.js"></script>
 </body>

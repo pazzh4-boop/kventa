@@ -11,6 +11,7 @@ body {
   width:100%;
   height:100%;
   background:url('assets/bg.jpg') center/cover no-repeat;
+  pointer-events:none;
 }
 
 #bg::after {
@@ -19,6 +20,8 @@ body {
   width:100%;
   height:100%;
   background:rgba(0,0,0,0.6);
+  pointer-events:none;
+  transition:0.4s;
 }
 
 /* HUD */
@@ -32,9 +35,15 @@ body {
   align-items:center;
   padding:0 20px;
   background:rgba(15,20,30,0.5);
+  z-index:5;
 }
 
 /* AUTH */
+#auth {
+  position:relative;
+  z-index:10;
+}
+
 .panel {
   position:absolute;
   right:8%;
@@ -48,6 +57,46 @@ body {
   display:flex;
   flex-direction:column;
   gap:10px;
+}
+
+/* INPUTS */
+.panel input {
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  background:rgba(0,0,0,0.6);
+  color:white;
+}
+
+.panel input:focus {
+  outline:none;
+  border:1px solid rgba(77,166,255,0.6);
+  box-shadow:0 0 10px rgba(77,166,255,0.3);
+}
+
+/* BUTTON */
+#login-btn {
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  background:rgba(255,255,255,0.2);
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+#login-btn:hover {
+  background:rgba(77,166,255,0.4);
+}
+
+#login-btn:disabled {
+  background:rgba(77,166,255,0.4);
+}
+
+/* MAIN */
+#main {
+  position:relative;
+  z-index:5;
 }
 
 /* SIDEBAR */
@@ -68,6 +117,8 @@ body {
   padding:10px;
   border-radius:8px;
   text-align:left;
+  color:white;
+  cursor:pointer;
 }
 
 #sidebar button.active {
@@ -128,6 +179,7 @@ body {
   border-radius:10px;
   background:rgba(255,255,255,0.05);
   margin-bottom:10px;
+  cursor:pointer;
 }
 
 .agent.active {
@@ -161,4 +213,15 @@ body {
   overflow:auto;
   background:black;
   padding:10px;
+}
+
+/* ANIMATION */
+body.auth-loading #bg::after {
+  background:rgba(0,0,0,0.75);
+}
+
+.fade-out {
+  opacity:0;
+  transform:translateY(10px);
+  transition:0.4s;
 }

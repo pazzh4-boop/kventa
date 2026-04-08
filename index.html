@@ -10,10 +10,8 @@
 
 <body>
 
-<!-- BACKGROUND -->
 <div id="bg"></div>
 
-<!-- HUD -->
 <div id="hud">
   <div>KVENTA SYSTEM</div>
   <div>Agent: je1nn | ● ONLINE</div>
@@ -22,21 +20,18 @@
 <!-- AUTH -->
 <div id="auth">
   <div class="panel">
-
     <h1>АВТОРИЗАЦИЯ</h1>
 
     <input id="login" placeholder="Никнейм">
     <input id="password" type="password" placeholder="Пароль">
 
     <button id="login-btn">ВОЙТИ</button>
-
   </div>
 </div>
 
 <!-- MAIN -->
 <div id="main" style="display:none;">
 
-  <!-- SIDEBAR -->
   <div id="sidebar">
     <button data-tab="profile" class="active">Профиль</button>
     <button data-tab="agents">Агенты</button>
@@ -46,14 +41,11 @@
     <button data-tab="terminal">Терминал</button>
   </div>
 
-  <!-- CONTENT -->
   <div id="content">
 
-    <!-- PROFILE -->
     <div class="tab active" id="profile">
       <div class="card big">
         <h2>ДОСЬЕ</h2>
-
         <div class="grid">
           <div><span>Имя</span><b>Jay Forsyth</b></div>
           <div><span>Организация</span><b>FIB</b></div>
@@ -62,13 +54,10 @@
       </div>
     </div>
 
-    <!-- AGENTS -->
     <div class="tab" id="agents">
-
       <div class="split">
 
         <div class="list">
-
           <div class="agent active">
             <div class="avatar"></div>
             <div>
@@ -84,7 +73,6 @@
               <span>В миссии</span>
             </div>
           </div>
-
         </div>
 
         <div class="details card">
@@ -94,33 +82,23 @@
         </div>
 
       </div>
-
     </div>
 
-    <!-- MISSIONS -->
     <div class="tab" id="missions">
       <div class="card">
         <h2>Операция "Тень"</h2>
-
-        <div class="progress">
-          <div class="bar"></div>
-        </div>
-
+        <div class="progress"><div class="bar"></div></div>
         <span>В процессе</span>
       </div>
     </div>
 
-    <!-- LOGS -->
     <div class="tab" id="logs">
       <div class="card">
         <h2>ЛОГИ</h2>
-        <div class="logs" id="log-box">
-          <div>> система активна</div>
-        </div>
+        <div class="logs">> система активна</div>
       </div>
     </div>
 
-    <!-- SCANNER -->
     <div class="tab" id="scanner">
       <div class="card">
         <h2>БАЗА</h2>
@@ -128,7 +106,6 @@
       </div>
     </div>
 
-    <!-- TERMINAL -->
     <div class="tab" id="terminal">
       <div class="card">
         <h2>ТЕРМИНАЛ</h2>
@@ -137,7 +114,6 @@
     </div>
 
   </div>
-
 </div>
 
 <script src="script.js"></script>

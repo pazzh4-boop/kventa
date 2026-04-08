@@ -10,6 +10,7 @@
 
 <body>
 
+<!-- BACKGROUND -->
 <div id="bg"></div>
 
 <!-- HUD -->
@@ -21,17 +22,19 @@
 <!-- AUTH -->
 <div id="auth">
   <div class="panel">
+
     <h1>АВТОРИЗАЦИЯ</h1>
 
     <input id="login" placeholder="Никнейм">
     <input id="password" type="password" placeholder="Пароль">
 
     <button id="login-btn">ВОЙТИ</button>
+
   </div>
 </div>
 
 <!-- MAIN -->
-<div id="main">
+<div id="main" style="display:none;">
 
   <!-- SIDEBAR -->
   <div id="sidebar">
@@ -96,7 +99,6 @@
 
     <!-- MISSIONS -->
     <div class="tab" id="missions">
-
       <div class="card">
         <h2>Операция "Тень"</h2>
 
@@ -106,14 +108,13 @@
 
         <span>В процессе</span>
       </div>
-
     </div>
 
     <!-- LOGS -->
     <div class="tab" id="logs">
       <div class="card">
         <h2>ЛОГИ</h2>
-        <div class="logs">
+        <div class="logs" id="log-box">
           <div>> система активна</div>
         </div>
       </div>

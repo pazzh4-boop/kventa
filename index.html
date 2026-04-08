@@ -8,23 +8,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body data-state="normal">
 
 <div id="bg"></div>
 
+<!-- HUD -->
 <div id="hud">
   <div>KVENTA SYSTEM</div>
   <div>Agent: je1nn | ● ONLINE</div>
 </div>
 
+<!-- NOTIFICATIONS -->
+<div id="notifications"></div>
+
 <!-- AUTH -->
 <div id="auth">
   <div class="panel">
     <h1>АВТОРИЗАЦИЯ</h1>
-
     <input id="login" placeholder="Никнейм">
     <input id="password" type="password" placeholder="Пароль">
-
     <button id="login-btn">ВОЙТИ</button>
   </div>
 </div>
@@ -36,66 +38,68 @@
     <button data-tab="profile" class="active">Профиль</button>
     <button data-tab="agents">Агенты</button>
     <button data-tab="missions">Задания</button>
+    <button data-tab="mytasks">Мои задания</button>
+    <button data-tab="completed">Выполненные</button>
+    <button data-tab="notes">Заметки</button>
     <button data-tab="logs">Логи</button>
     <button data-tab="scanner">Сканер</button>
     <button data-tab="terminal">Терминал</button>
+    <button data-tab="control">Управление</button>
   </div>
 
   <div id="content">
 
+    <!-- PROFILE -->
     <div class="tab active" id="profile">
       <div class="card big">
         <h2>ДОСЬЕ</h2>
+
         <div class="grid">
           <div><span>Имя</span><b>Jay Forsyth</b></div>
           <div><span>Организация</span><b>FIB</b></div>
           <div><span>Ранг</span><b>Агент</b></div>
         </div>
+
+        <div class="rank-box">
+          <span>УРОВЕНЬ 12</span>
+          <div class="xp-bar">
+            <div class="xp-fill"></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
+    <!-- AGENTS -->
     <div class="tab" id="agents">
       <div class="split">
-
-        <div class="list">
-          <div class="agent active">
-            <div class="avatar"></div>
-            <div>
-              <b>Agent #1</b>
-              <span>Активен</span>
-            </div>
-          </div>
-
-          <div class="agent">
-            <div class="avatar"></div>
-            <div>
-              <b>Agent #2</b>
-              <span>В миссии</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="details card">
-          <h3>Agent #1</h3>
-          <p>Статус: Активен</p>
-          <p>Роль: Разведка</p>
-        </div>
-
+        <div class="list"></div>
+        <div class="details card"></div>
       </div>
     </div>
 
-    <div class="tab" id="missions">
+    <!-- MISSIONS -->
+    <div class="tab" id="missions"></div>
+
+    <div class="tab" id="mytasks">
+      <div class="card"><h2>МОИ ЗАДАНИЯ</h2></div>
+    </div>
+
+    <div class="tab" id="completed">
+      <div class="card"><h2>ВЫПОЛНЕННЫЕ</h2></div>
+    </div>
+
+    <div class="tab" id="notes">
       <div class="card">
-        <h2>Операция "Тень"</h2>
-        <div class="progress"><div class="bar"></div></div>
-        <span>В процессе</span>
+        <h2>ЗАМЕТКИ</h2>
+        <textarea placeholder="Введите заметку..."></textarea>
       </div>
     </div>
 
     <div class="tab" id="logs">
       <div class="card">
         <h2>ЛОГИ</h2>
-        <div class="logs">> система активна</div>
+        <div class="logs" id="log-box"></div>
       </div>
     </div>
 
@@ -113,8 +117,17 @@
       </div>
     </div>
 
+    <div class="tab" id="control">
+      <div class="card">
+        <h2>УПРАВЛЕНИЕ</h2>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<!-- WINDOWS -->
+<div id="windows"></div>
 
 <script src="script.js"></script>
 </body>

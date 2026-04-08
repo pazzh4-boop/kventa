@@ -18,7 +18,7 @@ body {
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.6);
 }
 
 /* HUD */
@@ -31,9 +31,7 @@ body {
   justify-content:space-between;
   align-items:center;
   padding:0 20px;
-  background:rgba(15,20,30,0.4);
-  backdrop-filter:blur(10px);
-  font-size:12px;
+  background:rgba(15,20,30,0.5);
 }
 
 /* AUTH */
@@ -42,135 +40,125 @@ body {
   right:8%;
   top:50%;
   transform:translateY(-50%);
-  width:360px;
-  padding:30px;
-  background:rgba(15,20,30,0.55);
+  width:320px;
+  padding:25px;
+  background:rgba(15,20,30,0.6);
   backdrop-filter:blur(20px);
-  border-radius:16px;
+  border-radius:14px;
   display:flex;
   flex-direction:column;
-  gap:15px;
-}
-
-/* INPUT */
-input {
-  height:50px;
-  background:rgba(0,0,0,0.6);
-  border:none;
-  border-radius:10px;
-  color:white;
-  padding-left:15px;
-}
-
-/* BUTTON */
-button {
-  border:none;
-  border-radius:10px;
-  color:white;
-  padding:10px;
-  cursor:pointer;
-  background:rgba(255,255,255,0.1);
-}
-
-/* MAIN */
-#main {
-  display:none;
+  gap:10px;
 }
 
 /* SIDEBAR */
 #sidebar {
   position:absolute;
-  left:0;
+  top:40px;
   width:220px;
-  height:100%;
-  background:rgba(15,20,30,0.4);
-  backdrop-filter:blur(20px);
+  height:calc(100% - 40px);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
   padding:20px;
 }
 
+#sidebar button {
+  background:rgba(255,255,255,0.05);
+  border:none;
+  padding:10px;
+  border-radius:8px;
+  text-align:left;
+}
+
 #sidebar button.active {
-  color:#4da6ff;
+  background:rgba(77,166,255,0.3);
 }
 
 /* CONTENT */
 #content {
   position:absolute;
   left:220px;
+  top:40px;
   right:0;
-  padding:40px;
+  bottom:0;
+  padding:30px;
 }
 
 /* TABS */
-.tab {
-  display:none;
-}
+.tab { display:none; }
+.tab.active { display:block; }
 
-.tab.active {
-  display:block;
-}
-
-/* AGENTS */
-.agent-card {
-  display:flex;
-  gap:10px;
-  padding:15px;
-  margin-bottom:10px;
-  background:rgba(255,255,255,0.05);
-  border-radius:10px;
-}
-
-.agent-card.active {
-  background:rgba(77,166,255,0.3);
-}
-
-.agent-avatar {
-  width:40px;
-  height:40px;
-  border-radius:50%;
-}
-
-/* DETAILS */
-#agent-details {
-  position:absolute;
-  right:40px;
-  top:40px;
-  width:300px;
+/* CARDS */
+.card {
   background:rgba(15,20,30,0.6);
   padding:20px;
   border-radius:12px;
 }
 
-/* MISSIONS */
-.mission-card {
-  padding:15px;
-  margin-bottom:10px;
-  background:rgba(255,255,255,0.05);
-  border-radius:10px;
-  cursor:pointer;
+.card.big {
+  width:420px;
 }
 
-/* WINDOWS */
-.window {
-  position:absolute;
-  top:120px;
-  left:300px;
-  width:350px;
-  background:rgba(15,20,30,0.95);
-  padding:15px;
-  border-radius:12px;
-}
-
-.window-header {
+/* GRID */
+.grid {
   display:flex;
-  justify-content:space-between;
-  cursor:grab;
+  flex-direction:column;
+  gap:10px;
 }
 
-/* TERMINAL */
-#terminal-box {
-  height:200px;
-  background:black;
+.grid span {
+  font-size:11px;
+  opacity:0.6;
+}
+
+/* AGENTS */
+.split {
+  display:flex;
+  gap:20px;
+}
+
+.list {
+  width:300px;
+}
+
+.agent {
+  display:flex;
+  gap:10px;
+  padding:12px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.05);
   margin-bottom:10px;
-  padding:10px;
+}
+
+.agent.active {
+  background:rgba(77,166,255,0.3);
+}
+
+.avatar {
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:gray;
+}
+
+/* PROGRESS */
+.progress {
+  height:8px;
+  background:rgba(255,255,255,0.1);
+  border-radius:10px;
+  margin:10px 0;
+}
+
+.bar {
+  width:30%;
+  height:100%;
+  background:#4da6ff;
+}
+
+/* LOGS */
+.logs {
+  height:200px;
   overflow:auto;
+  background:black;
+  padding:10px;
 }

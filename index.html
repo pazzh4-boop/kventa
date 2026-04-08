@@ -15,119 +15,65 @@
 <!-- HUD -->
 <div id="hud">
   <div>KVENTA SYSTEM</div>
-  <div>Agent: je1nn | ● ONLINE</div>
+  <div>Agent: je1nn ● ONLINE</div>
 </div>
-
-<!-- NOTIFICATIONS -->
-<div id="notifications"></div>
 
 <!-- AUTH -->
 <div id="auth">
-  <div class="panel">
+  <div class="auth-panel">
     <h1>АВТОРИЗАЦИЯ</h1>
-    <input id="login" placeholder="Никнейм">
-    <input id="password" type="password" placeholder="Пароль">
+    <input placeholder="Никнейм">
+    <input placeholder="Пароль" type="password">
     <button id="login-btn">ВОЙТИ</button>
   </div>
 </div>
 
 <!-- MAIN -->
-<div id="main" style="display:none;">
+<div id="main">
 
   <div id="sidebar">
     <button data-tab="profile" class="active">Профиль</button>
     <button data-tab="agents">Агенты</button>
     <button data-tab="missions">Задания</button>
-    <button data-tab="mytasks">Мои задания</button>
-    <button data-tab="completed">Выполненные</button>
-    <button data-tab="notes">Заметки</button>
     <button data-tab="logs">Логи</button>
     <button data-tab="scanner">Сканер</button>
     <button data-tab="terminal">Терминал</button>
-    <button data-tab="control">Управление</button>
   </div>
 
   <div id="content">
 
-    <!-- PROFILE -->
     <div class="tab active" id="profile">
-      <div class="card big">
-        <h2>ДОСЬЕ</h2>
-
-        <div class="grid">
-          <div><span>Имя</span><b>Jay Forsyth</b></div>
-          <div><span>Организация</span><b>FIB</b></div>
-          <div><span>Ранг</span><b>Агент</b></div>
-        </div>
-
-        <div class="rank-box">
-          <span>УРОВЕНЬ 12</span>
-          <div class="xp-bar">
-            <div class="xp-fill"></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- AGENTS -->
-    <div class="tab" id="agents">
-      <div class="split">
-        <div class="list"></div>
-        <div class="details card"></div>
-      </div>
-    </div>
-
-    <!-- MISSIONS -->
-    <div class="tab" id="missions"></div>
-
-    <div class="tab" id="mytasks">
-      <div class="card"><h2>МОИ ЗАДАНИЯ</h2></div>
-    </div>
-
-    <div class="tab" id="completed">
-      <div class="card"><h2>ВЫПОЛНЕННЫЕ</h2></div>
-    </div>
-
-    <div class="tab" id="notes">
       <div class="card">
-        <h2>ЗАМЕТКИ</h2>
-        <textarea placeholder="Введите заметку..."></textarea>
+        <h2>ДОСЬЕ</h2>
+        <p>Jay Forsyth</p>
+        <p>FIB</p>
+        <p>Агент</p>
       </div>
+    </div>
+
+    <div class="tab" id="agents">
+      <div class="card">АГЕНТЫ</div>
+    </div>
+
+    <div class="tab" id="missions">
+      <div class="card">ЗАДАНИЯ</div>
     </div>
 
     <div class="tab" id="logs">
-      <div class="card">
-        <h2>ЛОГИ</h2>
-        <div class="logs" id="log-box"></div>
-      </div>
+      <div class="card">ЛОГИ</div>
     </div>
 
     <div class="tab" id="scanner">
-      <div class="card">
-        <h2>БАЗА</h2>
-        <input placeholder="Поиск">
-      </div>
+      <div class="card">СКАНЕР</div>
     </div>
 
     <div class="tab" id="terminal">
-      <div class="card">
-        <h2>ТЕРМИНАЛ</h2>
-        <div class="logs"></div>
-      </div>
-    </div>
-
-    <div class="tab" id="control">
-      <div class="card">
-        <h2>УПРАВЛЕНИЕ</h2>
-      </div>
+      <div class="card">ТЕРМИНАЛ</div>
     </div>
 
   </div>
-</div>
 
-<!-- WINDOWS -->
-<div id="windows"></div>
+</div>
 
 <script src="script.js"></script>
 </body>

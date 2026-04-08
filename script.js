@@ -2,7 +2,6 @@ const tabs = document.querySelectorAll('#sidebar button');
 
 tabs.forEach(btn=>{
   btn.onclick = ()=>{
-
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
     tabs.forEach(b=>b.classList.remove('active'));
 
@@ -11,7 +10,7 @@ tabs.forEach(btn=>{
   }
 });
 
-/* LOGIN ANIMATION */
+/* LOGIN */
 document.getElementById('login-btn').onclick = ()=>{
 
   const btn = document.getElementById('login-btn');
